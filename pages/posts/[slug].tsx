@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
+import { MathJax, MathJaxContext } from 'better-react-mathjax'
 import Container from '../../components/container'
 import PostBody from '../../components/post-body'
 import Header from '../../components/header'
@@ -17,6 +18,21 @@ type Props = {
   morePosts: PostType[]
   preview?: boolean
 }
+
+const config = {
+  loader: { load: ["[tex]/html"] },
+  tex: {
+    packages: { "[+]": ["html"] },
+    inlineMath: [
+      ["$", "$"],
+      ["\\(", "\\)"]
+    ],
+    displayMath: [
+      ["$$", "$$"],
+      ["\\[", "\\]"]
+    ]
+  }
+};
 
 const Post = ({ post, morePosts, preview }: Props) => {
   const router = useRouter()
@@ -44,7 +60,13 @@ const Post = ({ post, morePosts, preview }: Props) => {
                 date={post.date}
                 author={post.author}
               />
-              <PostBody content={post.content} />
+              <MathJaxContext config={config}>
+                    <MathJax>
+                    <PostBody content={post.content} />
+                    </MathJax>
+              </MathJaxContext>
+
+
             </article>
           </>
         )}

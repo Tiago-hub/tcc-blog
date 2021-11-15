@@ -10,10 +10,49 @@ ogImage:
   url: '/assets/blog/dynamic-routing/cover.jpg'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+# Introdução
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+Este trabalho tem o objetivo de analisar um sistema biarticulado com dois graus de liberdade. Este que consiste de duas hastes interligadas com uma apoiada em ponto fixo paralelo ao solo, de forma que todo o sistema esteja suspenso, de acordo com a figura 1. A ideia do sistema seria emular uma perna humana de maneira simplificada, onde a carga faz o papel do pé, e as articulações emulam joelho e quadril. Obviamente é um sistema bem simplificado pois a estrutura do corpo é bem mais complexa e com mais graus de liberdade.  
 
-## Lorem Ipsum
+![Figura 1: Ilustração do sistema articulado](/assets/blog/dynamic-routing/Untitled.png)
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+Figura 1: Ilustração do sistema articulado
+
+## Modelo matemático
+
+Para realizar qualquer trabalho com este sistema, primeiro é necessário descreve-lo matematicamente. A dedução matemática é semelhante ao caso do pêndulo duplo descrita por [Assencio](https://diego.assencio.com/?index=1500c66ae7ab27bb0106467c68feebc6) utilizando a mecânica Lagrangeana, com a distinção de considerar um objeto composto de duas hastes com centro de gravidade não necessariamente em suas extremidades, conforme ilustra a figura 2.
+
+![Figura 2: Modelo do sistema com massa concentrada em centro de gravidade](/assets/blog/dynamic-routing//Untitled%201.png)
+
+Figura 2: Modelo do sistema com massa concentrada em centro de gravidade
+
+As variáveis que constituem este modelo físico são:
+- \\(m_1\\) – Massa da barra 1;
+- \\(l_1\\) – Posição do centro de massa 1, medido a partir do eixo de rotação
+da barra 1;
+- \\(w_1\\) – Comprimento da barra 1;
+- \\(m_2\\) – Massa da barra 2;
+- \\(l_2\\) – Posição do centro de massa 2, medido a partir do eixo de rotação
+da barra 2;
+- \\(w_2\\) – Comprimento da barra 2.
+
+Para descrever o sistema através do método de Lagrange, defini-se duas coordenadas generalizadas. As melhores coordenadas para descrever esse tipo de sistema são os ângulos de abertura com o eixo vertical de cada haste:
+
+- $q_1$ - Ângulo do eixo 1;
+- $q_2$ - Ângulo do eixo 2.
+
+Tais ângulos relacionam-se com coordenadas cartesianas conforme exibido na figura 2 através de simples relações trigonométricas:
+
+- $x_1 = l_1 sen(q_1)$
+- $y_1 = -l_1 cos(q_1)$
+- $x_2 = w_1 sen(q_1) + l_2 sen(q_2)$
+- $y_2 = -w_1 cos(q_1) - l_2 cos(q_2)$
+
+Cujas derivadas temporais (denotadas pelo ponto sobre a variável), que serão usadas no método Lagrangeano, são dadas pelas equações abaixo:
+
+- $\dot{x_1} = \dot{q_1} l_1 cos(q_1)$
+- $\dot{y_1} = \dot{q_2} l_1 sen(q_1)$
+- $\dot{x_2} = \dot{q_1} w_1 cos(q_1) + \dot{q_2} l_2 cos(q_2)$
+- $\dot{y_2} = \dot{q_1} w_1 sen(q_1) + \dot{q_2} l_2 sen(q_2)$
+
+### Energias do sistema
