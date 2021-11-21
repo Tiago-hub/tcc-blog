@@ -30,7 +30,8 @@ const config = {
     displayMath: [
       ["$$", "$$"],
       ["\\[", "\\]"]
-    ]
+    ],
+    tags: 'ams'
   }
 };
 
