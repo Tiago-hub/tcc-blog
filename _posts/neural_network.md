@@ -112,50 +112,60 @@ L = \frac{1}{2}\(m_1l_1\dot{q_1}^2 + m_2\(w_1^2\dot{q_1}^2+l_2^2 \dot{q_2}^2 + 2
 \label{eq:L}
 \end{equation}$
 
-Nota-se que a lagrangeana do sistema é composta por diversas funções não lineares, o que levará inevitavelmente a uma série de equações diferencias não lineares que descrevem o comportamento do sistema. Em geral o controle de sistema lineares é melhor documentado e mais simples de se implementar, porém em se tratando de análises angulares restringiria muito o problema em pequenas oscilações. Por isso optou-se por prosseguir com o modelo não linear.
+Nota-se que a lagrangeana do sistema é composta por diversas funções não lineares, o que levará inevitavelmente a uma série de equações diferencias não lineares que descrevem o comportamento do sistema. Em geral o controle de sistema lineares é melhor documentado e mais simples de se implementar, portanto o escopo desse trabalho irá se restringir a realizar a análise de sistemas lineares. Para isso, torna-se necessário linearizar a lagrangeana. Conforme o descrito por [Svirin](https://math24.net/double-pendulum.html) a lagrangeana pode ser escrita de forma mais simples expandindo as não linearidades em uma série de Maclaurin a truncando a série até o termo quadrático. Assim os termos em cosseno podem ser simplificados para:
+
+$$
+\cos {\alpha _1} \approx 1 - \frac{{\alpha _1^2}}{2},\ \ \cos {\alpha _2} \approx 1 - \frac{{\alpha _2^2}}{2},\ \ \cos \left( {{\alpha _1} - {\alpha _2}} \right) \approx 1 - \frac{{{{\left( {{\alpha _1} - {\alpha _2}} \right)}^2}}}{2} \approx 1.
+$$
+
+A última aproximação foi feita considerando que o termo $(\alpha_1 - \alpha_2)^2$ resulta em um número muito pequeno, portanto pode ser desprezado.
+
+Com estas considerações, a equação \eqref{eq:L} pode ser linearizada:
+
+$\begin{equation}
+L = \frac{1}{2}\(m_1l_1\dot{q_1}^2 + m_2\(w_1^2\dot{q_1}^2+l_2^2 \dot{q_2}^2 + 2w_1l_2\dot{q_1}\dot{q_2}\)\) + m_1gl_1\left(1-\frac{q_1^2}{2}\right) + m_2g\left(w_1\left(1-\frac{q_1^2}{2}\right) + l_2\left(1-\frac{q_2^2}{2}\right)\right)
+\label{eq:Ll}
+\end{equation}$
 
 Obtendo as derivadas das coordendas gerais:
 
 $\begin{equation}
-\frac{\partial L}{\partial q_1} = -w_1l_2\dot{q_1}\dot{q_2}sen(q_1-q_2)
--m_1gl_1sen(q_1) - m_2gw_1sen(q_1)
+\frac{\partial L}{\partial q_1} = - m1gl_1q_! - m_2gw_1q_1
 \label{eq:dldq1}
 \end{equation}$
 
 $\begin{equation}
-\frac{\partial L}{\partial q_2} = w_1l_2\dot{q_1}\dot{q_2}sen(q_1-q_2) -m_2l_2gsen(q_2)
+\frac{\partial L}{\partial q_2} = - m_2gl_2q_2
 \label{eq:dldq2}
 \end{equation}$
 
 $\begin{equation}
-\frac{\partial L}{\partial \dot{q_1}} = m_1l_1^2\dot{q_1} + m_2 w_1^2\dot{q_1} + w_1l_2\dot{q_2}cos(q_1-q_2)
+\frac{\partial L}{\partial \dot{q_1}} = m_1l_1^2\dot{q_1} + m_2 w_1^2\dot{q_1} + m_2w_1l_2\dot{q_2}
 \label{eq:dldq1.}
 \end{equation}$
 
 $\begin{equation}
-\frac{\partial L}{\partial \dot{q_2}} = m_2l_2^2\dot{q_2} + w_1l_2\dot{q_1}cos(q_1-q_2)
+\frac{\partial L}{\partial \dot{q_2}} = m_2l_2^2\dot{q_2} + m_2w_1l_2\dot{q_1}
 \label{eq:dldq2.}
 \end{equation}$
 
 Obtendo as derivadas temporais:
 
 $\begin{equation}
-\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q_1}}\right) = \ddot{q_1}(m_1l_1^2+m_2w_1^2) + w_1l_2\ddot{q_2}cos(q_1-q_2) + w_1l_2\dot{q_2}^2sen(q_1-q_2) - w_1l_2\dot{q_1}\dot{q_2} - w_1l_2\dot{q_1}\dot{q_2}sen(q_1-q_2)
+\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q_1}}\right) = m_1l_1^2\ddot{q_1} + m_2w_1^2\ddot{q_1}+m_2w_1l_2\ddot{q_2}
 \label{eq:dtdq1.}
 \end{equation}$
 
 $\begin{equation}
-\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q_2}}\right) = m_2l_2^2\ddot{q_2} + w_ql_w\ddot{q_1}cos(q_1-q_2) + w_1l_2\dot{q_1}\dot{q_2}sen(q_1-q_2) - w_ql_2\dot{q_1}^2sen(q_1-q_2)
+\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q_2}}\right) = m_2l_2^2\ddot{q_2} + m_2w_1l_2\ddot{q_1}
 \label{eq:dtdq2.}
 \end{equation}$
 
 Prosseguindo com o método de Lagrange para obtenção das equações diferencias do sistema, aplica-se para as duas coordenadas generalizadas:
 
 $$
-\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) - \frac{\partial L}{\partial \dot{q}} = Q_k
+\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) - \frac{\partial L}{\partial \dot{q}} = 0
 $$
-
-Onde o lado direito da igualdade se refere as forças não conservativas presentes no sistema considerado. Para o caso proposto assume-se que há duas forças não conservativas atuando para cada coordenada generalizada que é o torque e coeficiente de friccção no eixo de rotação. Ambas essas forças poderiam ser produzidas por exemplo por um motor elétrico acoplado ao eixo de rotação. Devido ao torque e coeficiente poderem facilmente serem expressados em função das coordenadas generalizadas também são facilmente incluídos na equação.
 
 O que leva a um sistema de duas equações após agrupar os termos:
 
