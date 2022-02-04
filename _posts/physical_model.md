@@ -155,118 +155,34 @@ $$
 \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) - \frac{\partial L}{\partial \dot{q}} = Q_k
 $$
 
-Onde o lado direito da igualdade se refere as forças não conservativas presentes no sistema considerado. Para o caso proposto assume-se que há duas forças não conservativas atuando para cada coordenada generalizada que é o torque e coeficiente de friccção no eixo de rotação. Ambas essas forças poderiam ser produzidas por exemplo por um motor elétrico acoplado ao eixo de rotação. Devido ao torque e coeficiente poderem facilmente serem expressados em função das coordenadas generalizadas também são facilmente incluídos na equação.
+Onde o lado direito da igualdade se refere as forças não conservativas presentes no sistema considerado. Para o caso proposto assume-se que há duas forças não conservativas atuando para cada coordenada generalizada que é o torque e a friccção no eixo de rotação. Ambas essas forças poderiam ser produzidas por exemplo por um motor elétrico acoplado ao mesmo. Seja $\T_q$ o torque produzido no respectivo eixo de rotação relacionado a uma coordenada generalizada e $B_q$ suas respectivas forças de fricção. Então a equação acima pode ser escrita como:
 
-O que leva a um sistema de duas equações após agrupar os termos:
+$$
+\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) - \frac{\partial L}{\partial \dot{q}} = \T_q - B_q
+$$
 
+Como [Cline](https://phys.libretexts.org/Bookshelves/Classical_Mechanics/Variational_Principles_in_Classical_Mechanics_(Cline)/10%3A_Nonconservative_Systems/10.04%3A_Rayleighs_Dissipation_Function) explica, em se tratando de forças de fricção aplicadas em um sistema Lagrangiano, uma boa aproximação é utilizar uma função de dissipação de <em>Rayleigh's</em>. Como as partículas consideradas nesse sistema pouco exercem influência direta uma sobre a outra, as forças de acoplamento entre elas podem ser desprezadas no modelo de forças de dissipação, levando a força de atrito a poder ser expressa como dependendo linearmente da velocidade multiplicada por um coeficiente de atrito, aqui denominado $\lambda$. Portanto:
+
+$$
+B_q = \lambda_q\dot{q}
+$$
+
+Assim um sistema de duas equações pode ser definido, uma para cada coordenada generalizada
 $\begin{equation}
 \left\\{
     \\begin{array}{*{20}{l}}
-      {\ddot{q_1}\left(m_1l_1^2 + m_2w_1^2\right) + \ddot{q_2}\left(m_2w_1l_2\right) + q_1\left(m_1gl_1 + m_2gw_1\right) = 0} \\\\
-      {\ddot{q_1}\left(m_2w_1l_2\right) + \ddot{q_2}\left(m_2l_2^2\right) + q_2\left(m_2gl_2\right) = 0}
+      {\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q_1}}\right) - \frac{\partial L}{\partial \dot{q_1}} = \T_q_1 - \lambda_q_1\dot{q_1}
+} \\\\
+      {\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q_2}}\right) - \frac{\partial L}{\partial \dot{q_2}} = \T_q_2 - \lambda_q_2\dot{q_2}
+}
     \\end{array}
   \right.
 \label{eq:sis1}
 \end{equation}$
 
-Seja 
+Aplicando as derivadas espaciais e temporais obtidas anteriormente a equação \eqref{eq:sis1} e solucionando esse sistema através do método da substituição, encontra-se as seguintes equações de movimento:
 
-- $a = m_1l_1^2+m_2w_1^2$
-- $b = m_2w_1l_2$
-- $c = m_1gl_1 + m_2gw_1$
-- $d = m_2w_1l_2$
-- $e = m_2l_2^2$
-- $f = m_2gl_2$
+INSERIR EQUAÇÕES AQUI DEPOIS, JUNTO DOS ALFA, BETA DA VIDA
 
-O sistema \eqref{eq:sis1} pode ser simplificado para:
-
-$\begin{equation}
-\left\\{
-    \\begin{array}{*{20}{l}}
-      {(a) \ddot{q_1} + (b) \ddot{q_2} + (c) q_1 = 0} \\\\
-      {(d) \ddot{q_1} + (e) \ddot{q_2} + (f) q_2 = 0}
-    \\end{array}
-  \right.
-\label{eq:sis1_simp}
-\end{equation}$
-
-Extraindo a matriz de coeficientes deste sistema é possível aplicar o método de Gauss-Jordan para resolve-lo. Como é um sistema homogêneo, é desnecessário considerar a matriz expandida.
-
-$\begin{equation*}
-    \\begin{pmatrix}
-      a & b & c & 0 \\\\
-      d & e & 0 & f \\\\
-      0 & 0 & 0 & 0 \\\\
-      0 & 0 & 0 & 0
-    \\end{pmatrix}
-\end{equation*}$
-
-$L_1 \leftarrow 1/a \cdot L_1$
-
-$\begin{equation*}
-    \\begin{pmatrix}
-      1 & b/a & c/a & 0 \\\\
-      d & e & 0 & f \\\\
-      0 & 0 & 0 & 0 \\\\
-      0 & 0 & 0 & 0
-    \\end{pmatrix}
-\end{equation*}$
-
-$L_2 \leftarrow L_2 - d \cdot L_1$
-
-$\begin{equation*}
-    \\begin{pmatrix}
-      1 & b/a & c/a & 0 \\\\
-      0 & e - (db)/a & -(dc)/a & f \\\\
-      0 & 0 & 0 & 0 \\\\
-      0 & 0 & 0 & 0
-    \\end{pmatrix}
-\end{equation*}$
-
-$L_2 \leftarrow (e-(db)/a)^{-1} \cdot L_2$
-
-$\begin{equation*}
-    \\begin{pmatrix}
-      1 & b/a & c/a & 0 \\\\
-      0 & 1 & g & h \\\\
-      0 & 0 & 0 & 0 \\\\
-      0 & 0 & 0 & 0
-    \\end{pmatrix}
-\end{equation*}$
-
-Onde:
-- $g = -(dc)/a \cdot (e-(db)/a)^{-1}$ 
-- $h = f \cdot (e-(db)/a)^{-1}$
-
-$L_1 \leftarrow L_1 - b/a \cdot L_2$
-
-$\begin{equation*}
-    \\begin{pmatrix}
-      1 & 0 & i & j \\\\
-      0 & 1 & g & h \\\\
-      0 & 0 & 0 & 0 \\\\
-      0 & 0 & 0 & 0
-    \\end{pmatrix}
-\end{equation*}$
-
-Onde:
-- $i = c/a - (gb)/a$ 
-- $j = -(hb)/a$
-
-Assim o sistema de equações pode ser resolvido para $\ddot{q_1}$ e $\ddot{q_2}$ deixando $q_1$ e $q_2$ como variáveis livres:
-
-$\begin{equation}
-\left\\{
-    \\begin{array}{*{20}{l}}
-      {\ddot{q_1} = \alpha q_1 + \beta q_2} \\\\
-      {\ddot{q_2} = \gamma q_1 + \delta q_2}
-    \\end{array}
-  \right.
-\label{eq:sis1_solved}
-\end{equation}$
-
-Onde:
-- $\alpha = -i$ 
-- $\beta = -j$
-- $\gamma = -g$
-- $\delta = -h$
+De posse das equações de movimento do sistema, é possível realizar simulações
+computacionais com este e coletar dados sobre possíveis sistemas de controle. 
