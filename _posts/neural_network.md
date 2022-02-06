@@ -13,7 +13,7 @@ ogImage:
 
 # Introdução
 
-As redes neurais são estruturas inspiradas no cérebro humano, que imitam a maneira que neurônios enviam sinais uns aos outros. Possuem diversas aplicações no campo da robótica, análise de dados, processamento de sinais, medicina e engenharia. São pesquisadas desde a década de 1950 e desde então diferentes tipos de redes neurais foram desenvolvidas. Este post irá focar no tipo denominado Nebulosa, mais especificamente uma rede que usa o o neurônio neo-nebuloso (NFN do inglês) descrito por [Tamaka et all][1].
+As redes neurais são estruturas inspiradas no cérebro humano, que imitam a maneira que neurônios enviam sinais uns aos outros. Possuem diversas aplicações no campo da robótica, análise de dados, processamento de sinais, medicina e engenharia. São pesquisadas desde a década de 1950 e desde então diferentes tipos de redes neurais foram desenvolvidas. Este post irá focar no tipo denominado Nebulosa, mais especificamente uma rede que usa o o neurônio neo-nebuloso (NFN do inglês) descrito por ![Tamaka et all][1].
 
 A escolha do NFN se dá principalmente devido a sua simplicidade, baixo custo computacional e precisão [Silva et all][2].
 
@@ -29,7 +29,8 @@ y = \[ \sum_{i=1}^{m} f_i(x_i) \]
 A entrada $x_i$ é dividida em diversos segmentos nebulosos que são caracterizados por funções de pertinência $\mu_{i1}$, $\mu_{i2}$,...,$\mu_{in}$ dentro de um espectro de valores entre $x_{min}$ e $x_{max}$. As funções de pertinência são seguidas por pesos variáveis $w_{i1}$,$w_{i2}$,...,$w_{in}$. A FIGURA TAL mostra com um diagrama de blocos a ideia de como cada é dividida. Perceba que é bem semelhante ao diagrama de blocos do neurônio, existe uma saída que é resultado da
 contribuição de diversas funções.
 
-![(#fig:bar)Figura 1: Neurônio neo-nebuloso](/assets/blog/neural_network/Neo-Fuzzy-Neuron-Synapse.png)
+![Figura 1: Neurônio neo-nebuloso\label{mylabel}](/assets/blog/neural_network/Neo-Fuzzy-Neuron-Synapse.png)
+See figure \ref{mylabel}
 
 Figura 1: Neurônio neo-nebuloso
 
