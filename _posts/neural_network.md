@@ -3,7 +3,7 @@ title: 'Rede Neural Nebulosa'
 excerpt: 'As redes neurais são estruturas inspiradas no cérebro humano, que imitam a maneira que neurônios enviam sinais uns aos outros. Possuem diversas aplicações no campo da robótica, análise de dados, processamento de sinais, medicina e engenharia. São pesquisadas desde a década de 1950 e desde então diferentes tipos de redes neurais foram desenvolvidas. Este post irá focar no tipo denominado Nebulosa, mais especificamente uma rede que usa o o neurônio neo-nebuloso descrito por
 [Tamaka et all][1]'
 coverImage: '/assets/blog/dynamic-routing//Untitled%201.png'
-date: '2021-11-16T05:35:07.322Z'
+date: '2022-02-06T05:35:07.322Z'
 author:
   name: Tiago da Costa Ferreira
   picture: '/assets/blog/authors/jj.jpeg'
@@ -12,6 +12,26 @@ ogImage:
 ---
 
 # Introdução
+
+As redes neurais são estruturas inspiradas no cérebro humano, que imitam a maneira que neurônios enviam sinais uns aos outros. Possuem diversas aplicações no campo da robótica, análise de dados, processamento de sinais, medicina e engenharia. São pesquisadas desde a década de 1950 e desde então diferentes tipos de redes neurais foram desenvolvidas. Este post irá focar no tipo denominado Nebulosa, mais especificamente uma rede que usa o o neurônio neo-nebuloso (NFN do inglês) descrito por [Tamaka et all][1].
+
+A escolha do NFN se dá principalmente devido a sua simplicidade, baixo custo computacional e precisão [Silva et all][2].
+
+#Arquitetura de um neurônio neo-nebuloso
+
+A estrutura de um neurônio neo nebuloso é mostrada na Figura @fig:1 Matematicamente a saída do neurônio pode ser descrita como:
+
+$\begin{equation}
+y = \[ \sum_{i=1}^{m} f_i(x_i) \]
+\label{eq:fuzzy_out}
+\end{equation}$
+
+A entrada $x_i$ é dividida em diversos segmentos nebulosos que são caracterizados por funções de pertinência $\mu_i1$, $\mu_i2$,...,$\mu_in$ dentro de um espectro de valores entre $x_min$ e $x_max$. As funções de pertinência são seguidas por pesos variáveis $w_i1$,$w_i2$,...,$w_in$. A FIGURA TAL mostra com um diagrama de blocos a ideia de como cada é dividida. Perceba que é bem semelhante ao diagrama de blocos do neurônio, existe uma saída que é resultado da
+contribuição de diversas funções.
+
+![Figura 1: Neurônio neo-nebuloso](/assets/blog/neural_network/Neo-Fuzzy-Neuron-Synapse.png){#fig:1}
+
+Figura 1: Neurônio neo-nebuloso
 
 Este trabalho tem o objetivo de analisar um sistema biarticulado com dois graus de liberdade. Este que consiste de duas hastes interligadas com uma apoiada em ponto fixo paralelo ao solo, de forma que todo o sistema esteja suspenso, de acordo com a figura 1. A ideia do sistema seria emular uma perna humana de maneira simplificada, onde a carga faz o papel do pé, e as articulações emulam joelho e quadril. Obviamente é um sistema bem simplificado pois a estrutura do corpo é bem mais complexa e com mais graus de liberdade.  
 
