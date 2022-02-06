@@ -1,6 +1,7 @@
 ---
-title: 'Sistema Biarticulado'
-excerpt: 'O sistema biarticulado é um sistema com dois graus de liberdade, muito semelhante ao pêndulo duplo. Uma descrição matemática das equações diferencias que regem esse sistema baseada na mecânica de Lagrange é descrita neste post.'
+title: 'Rede Neural Nebulosa'
+excerpt: 'As redes neurais são estruturas inspiradas no cérebro humano, que imitam a maneira que neurônios enviam sinais uns aos outros. Possuem diversas aplicações no campo da robótica, análise de dados, processamento de sinais, medicina e engenharia. São pesquisadas desde a década de 1950 e desde então diferentes tipos de redes neurais foram desenvolvidas. Este post irá focar no tipo denominado Nebulosa, mais especificamente uma rede que usa o o neurônio neo-nebuloso descrito por
+[Tamaka et all][1]'
 coverImage: '/assets/blog/dynamic-routing//Untitled%201.png'
 date: '2021-11-16T05:35:07.322Z'
 author:
@@ -280,3 +281,6 @@ Onde:
 - $\beta = -j$
 - $\gamma = -g$
 - $\delta = -h$
+
+#Referencias
+[1]: <https://www.koreascience.or.kr/article/CFKO199311920545505.pdf> Yamakawa et all. **A New Effective Learning Algorithm for a Neo Fuzzy Neuron Model** 
