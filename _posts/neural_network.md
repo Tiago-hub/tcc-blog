@@ -19,17 +19,17 @@ A escolha do NFN se dá principalmente devido a sua simplicidade, baixo custo co
 
 #Arquitetura de um neurônio neo-nebuloso
 
-A estrutura de um neurônio neo nebuloso é mostrada na Figura @fig:1 Matematicamente a saída do neurônio pode ser descrita como:
+A estrutura de um neurônio neo nebuloso é mostrada na Figura \@ref(fig:bar) Matematicamente a saída do neurônio pode ser descrita como:
 
 $\begin{equation}
 y = \[ \sum_{i=1}^{m} f_i(x_i) \]
 \label{eq:fuzzy_out}
 \end{equation}$
 
-A entrada $x_i$ é dividida em diversos segmentos nebulosos que são caracterizados por funções de pertinência $\mu_i1$, $\mu_i2$,...,$\mu_in$ dentro de um espectro de valores entre $x_min$ e $x_max$. As funções de pertinência são seguidas por pesos variáveis $w_i1$,$w_i2$,...,$w_in$. A FIGURA TAL mostra com um diagrama de blocos a ideia de como cada é dividida. Perceba que é bem semelhante ao diagrama de blocos do neurônio, existe uma saída que é resultado da
+A entrada $x_i$ é dividida em diversos segmentos nebulosos que são caracterizados por funções de pertinência $\mu_{i1}$, $\mu_{i2}$,...,$\mu_{in}$ dentro de um espectro de valores entre $x_{min}$ e $x_{max}$. As funções de pertinência são seguidas por pesos variáveis $w_{i1}$,$w_{i2}$,...,$w_{in}$. A FIGURA TAL mostra com um diagrama de blocos a ideia de como cada é dividida. Perceba que é bem semelhante ao diagrama de blocos do neurônio, existe uma saída que é resultado da
 contribuição de diversas funções.
 
-![Figura 1: Neurônio neo-nebuloso](/assets/blog/neural_network/Neo-Fuzzy-Neuron-Synapse.png){#fig:1}
+![(#fig:bar)Figura 1: Neurônio neo-nebuloso](/assets/blog/neural_network/Neo-Fuzzy-Neuron-Synapse.png)
 
 Figura 1: Neurônio neo-nebuloso
 
