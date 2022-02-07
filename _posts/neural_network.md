@@ -34,13 +34,37 @@ Figura 1: Neurônio neo-nebuloso [fonte](https://www.researchgate.net/publicatio
 ![Figura 2: Estrutura de uma sinapse de neurônio neo-nebuloso](s/assets/blog/neural_network/synapse.png)
 Figura 2: Synapse de um neurônio neo-nebulosa. Pode ser descrita como uma série de regras do tipo "se-senão" multiplicadas por um peso. [fonte](https://www.koreascience.or.kr/article/CFKO199311920545505.pdf)
 
-A saída de cada sinapse é portanto dependente de dois fatores: a função de pertinência e o peso $w_{ij}$. Este peso é um número real e o processo de definir estes pesos é o chamado processo de aprendizagem da rede neural. As funções de pertinência de uma NFN são ditas complementares, ou seja, dado um sinal de entrada $x_i$m apenas duas funções de pertinência são ativadas simultaneamente e estas são vizinhas uma da outra. As duas funções ativada recebem os índice $k$ e $k+1$
-respectivamente. Além disso a soma do valor destas duas funções é
+A saída de cada sinapse é portanto dependente de dois fatores: a função de pertinência e o peso $w_{ij}$. Este peso é um número real e o processo de definir estes pesos é o chamado algoritmo de aprendizagem da rede neural. As funções de pertinência de uma NFN são ditas complementares, ou seja, dado um sinal de entrada $x_i$m apenas duas funções de pertinência são ativadas simultaneamente e estas são vizinhas uma da outra. As duas funções ativada recebem os índice $k$ e $k+1$ respectivamente. Além disso a soma do valor destas duas funções é
 necessariamente 1, isto é: $\mu_{ik}(x_i)+\mu_{ik+1}(x_i)=1$. Com essa condição das funções serem complementares, a saída do neurônio pode ser expressa matematicamente de forma simplificada:
 
 $\begin{equation}
 f_i(x_i) = \frac{\sum_{j=1}^n \mu_{ij}(x_i)\cdot w_{ij}}{\sum_{j=1}^n \mu{ij}(x_i)} = \frac{\mu_{ik}w_{ik}+\mu_{ik+1}w_{ik+1}}{\mu_{ik}(x_i)+\mu_{ik+1}(x_i)} =  \mu_{ik}w_{ik}+\mu_{ik+1}w_{ik+1}
 \label{eq:neuron_out}
+\end{equation}$
+
+## Algoritmo de aprendizagem
+
+Conforme [Silva et all][2] o algoritmo de aprendizagem de uma NFN é um algoritmo baseado em gradiente com taxa de aprendizado ótima. 
+
+Definindo um vetor de entradas para a rede neural em um determinado instante de tempo: $x = (x_1, x_2, ..., x_i, ..., x_n) este produzirá uma saída $y$ em um neurônio. É possível definir um erro baseado na diferença entre esta saída e a saída deseja $y_t$:
+
+$$
+E = y-y_t
+$$
+
+Dado o número de funções de pertinência fixo (granulação), o aprendizado da rede depende apenas de definir os valores dos pesos $w_{ij}$ de forma a minimizar o valor do erro. É possível demonstrar que o erro é uma função quadrática dos pesos e portanto o seu mínimo local também é global. A convergência para o mínimo do erro dependerá do ponto inicial, direção de busca e taxa de aprendizado. No caso se NFN assume-se como ponto inicial valores nulos. O gradiente descendente
+fornece a direçao de busca mais simples. Portanto o valor $q_{ik}$ é atualizado de acordo:
+
+$\begin{equation}
+q_{ik_i} = q_{ik_i} - \alpha \cdot E \mu_{ik_i}(x_{i})
+\label{eq:update_q}
+\end{equation}$
+
+A taxa \alpha é dada segundo o trabalho de COLOCAR AQ como sendo a taxa ótima de aprendizagem:
+
+$\begin{equation}
+\alpha = \frac{1}{\sum_{i=1}^n \mu{ik_i}(x_i)^2 + \mu_{ik_i+1}(x_i)^2}
+\label{eq:alpha}
 \end{equation}$
 
 
@@ -309,3 +333,4 @@ Onde:
 
 #Referencias
 [1]: <https://www.koreascience.or.kr/article/CFKO199311920545505.pdf> Yamakawa et all. **A New Effective Learning Algorithm for a Neo Fuzzy Neuron Model** 
+[2]: <https://www.researchgate.net/publication/259162389_A_fast_learning_algorithm_for_evolving_neo-fuzzy_neuron> Silva et all. **A fast learning algorithm for evolving neo-fuzzy neuron**
