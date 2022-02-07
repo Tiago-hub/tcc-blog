@@ -39,7 +39,7 @@ respectivamente. Além disso a soma do valor destas duas funções é
 necessariamente 1, isto é: $\mu_{ik}(x_i)+\mu_{ik+1}(x_i)=1$. Com essa condição das funções serem complementares, a saída do neurônio pode ser expressa matematicamente de forma simplificada:
 
 $\begin{equation}
-f_i(x_i) = \frac{\sum_{j=1}^n \mu_{ij}(x_i)\bullet w_{ij}}{\sum_{j=1}^n \mu{ij}(x_i)} = \frac{\mu_{ik}w_{ik}+\mu_{ik+1}w_{ik+1}}{\mu_{ik}(x_i)+\mu_{ik+1}(x_i)} =  \mu_{ik}w_{ik}+\mu_{ik+1}w_{ik+1}
+f_i(x_i) = \frac{\sum_{j=1}^n \mu_{ij}(x_i)\cdot w_{ij}}{\sum_{j=1}^n \mu{ij}(x_i)} = \frac{\mu_{ik}w_{ik}+\mu_{ik+1}w_{ik+1}}{\mu_{ik}(x_i)+\mu_{ik+1}(x_i)} =  \mu_{ik}w_{ik}+\mu_{ik+1}w_{ik+1}
 \label{eq:neuron_out}
 \end{equation}$
 
