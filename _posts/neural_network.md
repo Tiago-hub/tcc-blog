@@ -19,26 +19,30 @@ A escolha do NFN se dá principalmente devido a sua simplicidade, baixo custo co
 
 #Arquitetura de um neurônio neo-nebuloso
 
-A estrutura de um neurônio neo nebuloso é mostrada na Figura \@ref(fig:bar) Matematicamente a saída do neurônio pode ser descrita como:
+A estrutura de um neurônio neo nebuloso é mostrada na Figura 1. Matematicamente a saída do neurônio pode ser descrita como:
 
 $\begin{equation}
 y = \[ \sum_{i=1}^{m} f_i(x_i) \]
 \label{eq:fuzzy_out}
 \end{equation}$
 
-A entrada $x_i$ é dividida em diversos segmentos nebulosos que são caracterizados por funções de pertinência $\mu_{i1}$, $\mu_{i2}$,...,$\mu_{in}$ dentro de um espectro de valores entre $x_{min}$ e $x_{max}$. As funções de pertinência são seguidas por pesos variáveis $w_{i1}$,$w_{i2}$,...,$w_{in}$. A FIGURA TAL mostra com um diagrama de blocos a ideia de como cada é dividida. Perceba que é bem semelhante ao diagrama de blocos do neurônio, existe uma saída que é resultado da
-contribuição de diversas funções.
+A entrada $x_i$ é dividida em diversos segmentos nebulosos que são caracterizados por funções de pertinência $\mu_{i1}$, $\mu_{i2}$,...,$\mu_{in}$ dentro de um espectro de valores entre $x_{min}$ e $x_{max}$. As funções de pertinência são seguidas por pesos variáveis $w_{i1}$,$w_{i2}$,...,$w_{in}$. A Figura 2 mostra com um diagrama de blocos a ideia de como cada entrada é dividida. Essa divisão se assemelha ao diagrama de blocos do neurônio mostrado na Figura 1, onde existe uma saída que é resultado da contribuição de diversas funções.
 
 ![Figura 1: Neurônio neo-nebuloso\label{mylabel}](/assets/blog/neural_network/Neo-Fuzzy-Neuron-Synapse.png)
-See figure \ref{mylabel}
+Figura 1: Neurônio neo-nebuloso [fonte](https://www.researchgate.net/publication/239919031_A_Neo-Fuzzy_Approach_for_Bottom_Parameters_Estimation_in_Oil_Wells)
 
-Figura 1: Neurônio neo-nebuloso
+![Figura 2: Estrutura de uma sinapse de neurônio neo-nebuloso](synapse.png)
+Figura 2: Synapse de um neurônio neo-nebulosa. Pode ser descrita como uma série de regras do tipo "se-senão" multiplicadas por um peso. [fonte](https://www.koreascience.or.kr/article/CFKO199311920545505.pdf)
 
-Este trabalho tem o objetivo de analisar um sistema biarticulado com dois graus de liberdade. Este que consiste de duas hastes interligadas com uma apoiada em ponto fixo paralelo ao solo, de forma que todo o sistema esteja suspenso, de acordo com a figura 1. A ideia do sistema seria emular uma perna humana de maneira simplificada, onde a carga faz o papel do pé, e as articulações emulam joelho e quadril. Obviamente é um sistema bem simplificado pois a estrutura do corpo é bem mais complexa e com mais graus de liberdade.  
+A saída de cada sinapse é portanto dependente de dois fatores: a função de pertinência e o peso $w_{ij}$. Este peso é um número real e o processo de definir estes pesos é o chamado processo de aprendizagem da rede neural. As funções de pertinência de uma NFN são ditas complementares, ou seja, dado um sinal de entrada $x_i$m apenas duas funções de pertinência são ativadas simultaneamente e estas são vizinhas uma da outra. As duas funções ativada recebem os índice $k$ e $k+1$
+respectivamente. Além disso a soma do valor destas duas funções é
+necessariamente 1, isto é: $\mu_{ik}(x_i)+\mu_{ik+1}(x_i)=1$. Com essa condição das funções serem complementares, a saída do neurônio pode ser expressa matematicamente de forma simplificada:
 
-![Figura 1: Ilustração do sistema articulado](/assets/blog/dynamic-routing/Untitled.png)
+$\begin{equation}
+f_i(x_i) = \frac{\sum_{j=1}^n \mu_{ij}(x_i)\bullet w_{ij}}{\sum_{j=1}^n \mu{ij}(x_i)} = \frac{\mu_{ik}w_{ik}+\mu_{ik+1}w_{ik+1}}{\mu_{ik}(x_i)+\mu_{ik+1}(x_i)} =  \mu_{ik}w_{ik}+\mu_{ik+1}w_{ik+1}
+\label{eq:neuron_out}
+\end{equation}$
 
-Figura 1: Ilustração do sistema articulado
 
 ## Modelo matemático
 
