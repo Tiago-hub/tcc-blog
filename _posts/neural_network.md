@@ -31,7 +31,7 @@ A entrada $x_i$ é dividida em diversos segmentos nebulosos que são caracteriza
 ![Figura 1: Neurônio neo-nebuloso\label{mylabel}](/assets/blog/neural_network/Neo-Fuzzy-Neuron-Synapse.png)
 Figura 1: Neurônio neo-nebuloso [fonte](https://www.researchgate.net/publication/239919031_A_Neo-Fuzzy_Approach_for_Bottom_Parameters_Estimation_in_Oil_Wells)
 
-![Figura 2: Estrutura de uma sinapse de neurônio neo-nebuloso](synapse.png)
+![Figura 2: Estrutura de uma sinapse de neurônio neo-nebuloso](s/assets/blog/neural_network/synapse.png)
 Figura 2: Synapse de um neurônio neo-nebulosa. Pode ser descrita como uma série de regras do tipo "se-senão" multiplicadas por um peso. [fonte](https://www.koreascience.or.kr/article/CFKO199311920545505.pdf)
 
 A saída de cada sinapse é portanto dependente de dois fatores: a função de pertinência e o peso $w_{ij}$. Este peso é um número real e o processo de definir estes pesos é o chamado processo de aprendizagem da rede neural. As funções de pertinência de uma NFN são ditas complementares, ou seja, dado um sinal de entrada $x_i$m apenas duas funções de pertinência são ativadas simultaneamente e estas são vizinhas uma da outra. As duas funções ativada recebem os índice $k$ e $k+1$
