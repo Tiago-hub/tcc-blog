@@ -5,7 +5,7 @@ coverImage: '/assets/blog/dynamic-routing//Untitled%201.png'
 date: '2021-11-16T05:35:07.322Z'
 author:
   name: Tiago da Costa Ferreira
-  picture: '/assets/blog/authors/jj.jpeg'
+  picture: '/assets/blog/authors/tiago.png'
 ogImage:
   url: '/assets/blog/dynamic-routing//Untitled%201.png'
 ---

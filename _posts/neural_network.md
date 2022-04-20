@@ -2,13 +2,13 @@
 title: 'Rede Neural Nebulosa'
 excerpt: 'As redes neurais são estruturas inspiradas no cérebro humano, que imitam a maneira que neurônios enviam sinais uns aos outros. Possuem diversas aplicações no campo da robótica, análise de dados, processamento de sinais, medicina e engenharia. São pesquisadas desde a década de 1950 e desde então diferentes tipos de redes neurais foram desenvolvidas. Este post irá focar no tipo denominado Nebulosa, mais especificamente uma rede que usa o o neurônio neo-nebuloso descrito por
 [Tamaka et all][1]'
-coverImage: '/assets/blog/dynamic-routing//Untitled%201.png'
+coverImage: '/assets/blog/neural_network//neural-network-ilustration.png'
 date: '2022-02-06T05:35:07.322Z'
 author:
   name: Tiago da Costa Ferreira
-  picture: '/assets/blog/authors/jj.jpeg'
+  picture: '/assets/blog/authors/tiago.png'
 ogImage:
-  url: '/assets/blog/dynamic-routing//Untitled%201.png'
+  url: '/assets/blog/neural_network//neural-network-ilustration.png'
 ---
 
 # Introdução
@@ -97,6 +97,30 @@ $$
 
 Utilizando a linguagem python, foi implementado um modelo computacional da rede neural neo-nebulosa. Esse modelo é capaz de aprender a replicar sinais. Uma vez que a rede neural esteja treinada, ela irá reproduzir o mais fielmente possível a saída desejada para um conjunto de entradas semelhantes ao utilizado no treinamento.
 
-#Referencias
-[1]: <https://www.koreascience.or.kr/article/CFKO199311920545505.pdf> Yamakawa et all. **A New Effective Learning Algorithm for a Neo Fuzzy Neuron Model** 
-[2]: <https://www.researchgate.net/publication/259162389_A_fast_learning_algorithm_for_evolving_neo-fuzzy_neuron> Silva et all. **A fast learning algorithm for evolving neo-fuzzy neuron**
+Para validar e testar a capacidade da rede neo-nebulosa em reproduzir sinais, a princípio foram usadas algumas funções matemáticas simples.
+
+## Validação da rede neo-nebulosa
+
+### Função seno
+A primeira função é $f(t) = sen(t)$. A rede neural possui como entrada o tempo e duas defasagens, ou seja, o vetor $x$ de entrada é
+
+$$ x = \begin{bmatrix} t\ \\ t-1\ \\ t-2 \end{bmatrix} $$
+
+A função de saída, ou seja a que deseja replicar é $f(t)$. 
+
+![Figura 3: seno neo-nebuloso\label{mylabel}](/assets/blog/neural_network/rede_neo_nebulosa_replica_seno.png)
+Figura 3: Rede neo-nebulosa para função seno com respectivo erro quadrático médio (MSE) - Fonte: Autor 
+
+### Função de entumescimento
+Uma função já conhecida matematicamente é bem fácil de se trabalhar, uma rede neural neo-nebulosa se mostra bem mais útil em ser treinada para reconhecer sinais os quais não há uma lei matemática por trás, como por exemplo o grau de entumescimento. Uma quantidade que mede o quanto uma amostra de material absorveu de um solvente. No ramo da química, um gráfico útil para caracterizar amostrar é justamente o do grau de entumescimento em função da temperatura. Esse exemplo ilustra bem a capacidade da rede neural em replicar um sinal, mas ao mesmo tempo sua maior deficiência, a necessidade de dados para treinamento.
+
+Utilizando os dados fornecidos por [Ferreira][3] é possível demonstrar esse fenômeno. Observe que no primeiro caso, onde a rede foi utilizada apenas para replicar o sinal inicial, a rede tem um desempenho ótimo. Contudo o sinal possui poucos pontos do ponto de vista de treinamento de uma rede neural, e quando se aplica como entrada a temperatura em uma maior gama de valores, a rede neural tem saída nula pois não foi treinada para tais situações
+
+![](/assets/blog/neural_network/rede_neo_nebulosa_replica_entumescimento_1.png)
+![](/assets/blog/neural_network/rede_neo_nebulosa_replica_entumescimento_2.png)
+Figura 4: Rede neo-nebulosa replicando uma curva de entumescimento- Fonte: Autor 
+
+# Referencias
+- [1]: <https://www.koreascience.or.kr/article/CFKO199311920545505.pdf> Yamakawa et all. **A New Effective Learning Algorithm for a Neo Fuzzy Neuron Model**
+- [2]: <https://www.researchgate.net/publication/259162389_A_fast_learning_algorithm_for_evolving_neo-fuzzy_neuron> Silva et all. **A fast learning algorithm for evolving neo-fuzzy neuron**
+- [3]: Ferreira, Leticia Batista Clarindo. **Título bacana do trabalho do meu amor**
