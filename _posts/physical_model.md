@@ -155,34 +155,68 @@ $$
 \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) - \frac{\partial L}{\partial \dot{q}} = Q_k
 $$
 
-Onde o lado direito da igualdade se refere as forças não conservativas presentes no sistema considerado. Para o caso proposto assume-se que há duas forças não conservativas atuando para cada coordenada generalizada que é o torque e a friccção no eixo de rotação. Ambas essas forças poderiam ser produzidas por exemplo por um motor elétrico acoplado ao mesmo. Seja $\T_q$ o torque produzido no respectivo eixo de rotação relacionado a uma coordenada generalizada e $B_q$ suas respectivas forças de fricção. Então a equação acima pode ser escrita como:
+Onde o lado direito da igualdade se refere as forças não conservativas presentes no sistema considerado. Para o caso proposto assume-se que há duas forças não conservativas atuando para cada coordenada generalizada que é o torque e a friccção no eixo de rotação. Ambas essas forças poderiam ser produzidas por exemplo por um motor elétrico acoplado ao mesmo. Seja $T_q$ o torque produzido no respectivo eixo de rotação relacionado a uma coordenada generalizada e $B_q$ suas respectivas forças de fricção. Então a equação acima pode ser escrita como:
+
+
+Onde o lado direito da igualdade se refere as forças não conservativas presentes no sistema considerado. Para o caso proposto assume-se que há duas forças não conservativas atuando para cada coordenada generalizada que é o torque e a friccção no eixo de rotação.
+
+Primeiro a partir da definição matemática, calcula-se a força devido ao torque. Uma força qualquer para ser convertida em coordenada generalizada deve-se aplicar a equação:
+
+$$Q_i = \\displaystyle \sum \vec{F} \cdot \frac{\partial \vec{r}}{\partial q_i}$$
+
+Onde $\vec{r}$ é o vetor que dá a posição do corpo sobre o qual a força age e $\vec{F}$ o vetor força.
+
+Para a força que atua sobre o primeiro eixo:
+
+$$Q_1 = \vec{F_1} \cdot \frac{\partial \vec{r_1}}{\partial q_1} + \vec{F_2} \cdot \frac{\partial \vec{r_2}}{\partial q_1}$$ 
+
+Os vetores de coordenadas são dados por:
+
+$$ \vec{r_1} = l_1 sen(q_1) \vec{i} - l_1 cos(q_1) \vec{j} $$
+
+
+$$ \vec{r_2} = (w_1sen(q_1) + l_2sen(q_2)) \vec{i} - (w_1cos(q_1)+l_2cos(q_2)) \vec{j} $$
+
+Enquanto os vetores de força são simplesmente o torque aplicado $T$ multiplicado pela distância do corpo até o eixo. Visto que os corpos são tratados como massas pontuais, é um modelo razoável de se utilizar.
+
+$$ \vec{F_1} = \frac{T_1}{l_1cos(q_1)} \vec{i} + \frac{T_1}{l_1sen(q_1)} \vec{j}$$
+
+$$ \vec{F_2} = \frac{T_2}{l_2cos(q_2)} \vec{i} + \frac{T_2}{l_1sen(q_2)} \vec{j}$$
 
 $$
-\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) - \frac{\partial L}{\partial \dot{q}} = \T_q - B_q
+\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) - \frac{\partial L}{\partial \dot{q}} = T_q - B_q
 $$
 
-Como [Cline](https://phys.libretexts.org/Bookshelves/Classical_Mechanics/Variational_Principles_in_Classical_Mechanics_(Cline)/10%3A_Nonconservative_Systems/10.04%3A_Rayleighs_Dissipation_Function) explica, em se tratando de forças de fricção aplicadas em um sistema Lagrangiano, uma boa aproximação é utilizar uma função de dissipação de <em>Rayleigh's</em>. Como as partículas consideradas nesse sistema pouco exercem influência direta uma sobre a outra, as forças de acoplamento entre elas podem ser desprezadas no modelo de forças de dissipação, levando a força de atrito a poder ser expressa como dependendo linearmente da velocidade multiplicada por um coeficiente de atrito, aqui denominado $\lambda$. Portanto:
+Tomando a derivada parcial das coordenadas generalizadas e aplicando a operação de produto escalar com a respectiva força, a força generalizada que atua sobre o primeiro eixo é dada por:
+
+$$ Q_1 = 2T_1 + 2\frac{w_1}{l_2}T_2 $$
+
+De forma análoga, a força que atua sobre o segundo eixo é:
+
+
+$$Q_1 = \vec{F_1} \cdot \frac{\partial \vec{r_1}}{\partial q_2} + \vec{F_2} \cdot \frac{\partial \vec{r_2}}{\partial q_2} = 2T_2$$ 
+
+Como [Cline](https://phys.libretexts.org/Bookshelves/Classical_Mechanics/Variational_Principles_in_Classical_Mechanics_(Cline)/10%3A_Nonconservative_Systems/10.04%3A_Rayleighs_Dissipation_Function) explica, em se tratando de forças de fricção aplicadas em um sistema Lagrangiano, uma boa aproximação é utilizar uma função de dissipação de <em>Rayleigh's</em>. Como as partículas consideradas nesse sistema pouco exercem influência direta uma sobre a outra, as forças de acoplamento entre elas podem ser desprezadas no modelo de forças de dissipação, levando a força de atrito a poder ser expressa como dependendo linearmente da velocidade multiplicada por um coeficiente de atrito, aqui denominado $\lambda$. Portanto adota-se $B$ como sendo a força de atrito em coordenadas generalizadas, que é dada por:
 
 $$
 B_q = \lambda_q\dot{q}
 $$
 
 Assim um sistema de duas equações pode ser definido, uma para cada coordenada generalizada
+
 $\begin{equation}
 \left\\{
     \\begin{array}{*{20}{l}}
-      {\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q_1}}\right) - \frac{\partial L}{\partial \dot{q_1}} = \T_q_1 - \lambda_q_1\dot{q_1}
-} \\\\
-      {\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q_2}}\right) - \frac{\partial L}{\partial \dot{q_2}} = \T_q_2 - \lambda_q_2\dot{q_2}
-}
+      {\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q_1}}\right) - \frac{\partial L}{\partial \dot{q_1}} = 2T_1 + 2\frac{w_1}{l2}T_2 - \lambda_{q_1}\dot{q_1} }\\\\
+      {\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q_2}}\right) - \frac{\partial L}{\partial \dot{q_2}} = 2T_2 - \lambda_{q_2}\dot{q_2}}
     \\end{array}
   \right.
 \label{eq:sis1}
 \end{equation}$
 
-Aplicando as derivadas espaciais e temporais obtidas anteriormente a equação \eqref{eq:sis1} e solucionando esse sistema através do método da substituição, encontra-se as seguintes equações de movimento:
 
-INSERIR EQUAÇÕES AQUI DEPOIS, JUNTO DOS ALFA, BETA DA VIDA
+Aplicando as derivadas espaciais e temporais obtidas anteriormente a equação \eqref{eq:sis1} obtém-se um sistema de duas equações, do qual pode-se resolver para as duas acelerações $\ddot{q_1}$ e $\ddot{q_2}$ obtendo-se as equações de movimento do pêndulo duplo.
 
-De posse das equações de movimento do sistema, é possível realizar simulações
-computacionais com este e coletar dados sobre possíveis sistemas de controle. 
+Devido a ser trabalhoso o desenvolvimento de tal solução, utilizou-se o software mathematica da empresa *Wolfram Research* que permite a solução de equações algébricas. O desenvolvimento pode ser acompanhado AQUI [Colocar depois]
+
+De posse das equações de movimento do sistema, é possível realizar simulações computacionais com este e coletar dados sobre possíveis sistemas de controle. 
