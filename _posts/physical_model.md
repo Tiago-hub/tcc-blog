@@ -152,11 +152,8 @@ $\begin{equation}
 Prosseguindo com o método de Lagrange para obtenção das equações diferencias do sistema, aplica-se para as duas coordenadas generalizadas:
 
 $$
-\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) - \frac{\partial L}{\partial \dot{q}} = Q_k
+\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) - \frac{\partial L}{\partial q} = Q_k
 $$
-
-Onde o lado direito da igualdade se refere as forças não conservativas presentes no sistema considerado. Para o caso proposto assume-se que há duas forças não conservativas atuando para cada coordenada generalizada que é o torque e a friccção no eixo de rotação. Ambas essas forças poderiam ser produzidas por exemplo por um motor elétrico acoplado ao mesmo. Seja $T_q$ o torque produzido no respectivo eixo de rotação relacionado a uma coordenada generalizada e $B_q$ suas respectivas forças de fricção. Então a equação acima pode ser escrita como:
-
 
 Onde o lado direito da igualdade se refere as forças não conservativas presentes no sistema considerado. Para o caso proposto assume-se que há duas forças não conservativas atuando para cada coordenada generalizada que é o torque e a friccção no eixo de rotação.
 
@@ -194,7 +191,7 @@ $$ Q_1 = 2T_1 + 2\frac{w_1}{l_2}T_2 $$
 De forma análoga, a força que atua sobre o segundo eixo é:
 
 
-$$Q_1 = \vec{F_1} \cdot \frac{\partial \vec{r_1}}{\partial q_2} + \vec{F_2} \cdot \frac{\partial \vec{r_2}}{\partial q_2} = 2T_2$$ 
+$$Q_2 = \vec{F_1} \cdot \frac{\partial \vec{r_1}}{\partial q_2} + \vec{F_2} \cdot \frac{\partial \vec{r_2}}{\partial q_2} = 2T_2$$ 
 
 Como [Cline](https://phys.libretexts.org/Bookshelves/Classical_Mechanics/Variational_Principles_in_Classical_Mechanics_(Cline)/10%3A_Nonconservative_Systems/10.04%3A_Rayleighs_Dissipation_Function) explica, em se tratando de forças de fricção aplicadas em um sistema Lagrangiano, uma boa aproximação é utilizar uma função de dissipação de <em>Rayleigh's</em>. Como as partículas consideradas nesse sistema pouco exercem influência direta uma sobre a outra, as forças de acoplamento entre elas podem ser desprezadas no modelo de forças de dissipação, levando a força de atrito a poder ser expressa como dependendo linearmente da velocidade multiplicada por um coeficiente de atrito, aqui denominado $\lambda$. Portanto adota-se $B$ como sendo a força de atrito em coordenadas generalizadas, que é dada por:
 
