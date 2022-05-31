@@ -2,7 +2,7 @@
 title: 'Simulação do pêndulo duplo'
 excerpt: 'O pêndulo duplo é um modelo físico amplamente estudado. Este trabalho pretende utilizar da linguagem de programação python para realizar a simulação do comportamento de um pêndulo duplo. A ideia é de que sirva de base para simular o movimento simplificado de uma perna humana visto a direta semelhança entre os sistemas.'
 coverImage: '/assets/blog/double-pendulum-simulation/cover-image.png'
-date: '2022-02-06T05:35:07.322Z'
+date: '2022-03-16T05:35:07.322Z'
 author:
   name: Tiago da Costa Ferreira
   picture: '/assets/blog/authors/tiago.png'
