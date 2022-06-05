@@ -214,7 +214,7 @@ $\begin{equation}
 
 Aplicando as derivadas espaciais e temporais obtidas anteriormente a equação \eqref{eq:sis1} obtém-se um sistema de duas equações, do qual pode-se resolver para as duas acelerações $\ddot{q_1}$ e $\ddot{q_2}$ obtendo-se as equações de movimento do pêndulo duplo.
 
-Devido a ser trabalhoso o desenvolvimento de tal solução, utilizou-se o software MATLAB que permite a solução de equações algébricas. O desenvolvimento pode ser acompanhado AQUI [Colocar depois o codigo no github]
+Devido a ser trabalhoso o desenvolvimento de tal solução, utilizou-se o software MATLAB que permite a solução de equações algébricas. O desenvolvimento pode ser acompanhado logo ao final do post.
 
 De posse das equações de movimento do sistema, é possível realizar simulações computacionais com este e coletar dados sobre possíveis sistemas de controle. 
 
