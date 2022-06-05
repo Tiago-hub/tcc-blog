@@ -140,12 +140,12 @@ $\begin{equation}
 Obtendo as derivadas temporais:
 
 $\begin{equation}
-\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q_1}}\right) = \ddot{q_1}(m_1l_1^2+m_2w_1^2) + w_1l_2\ddot{q_2}cos(q_1-q_2) + w_1l_2\dot{q_2}^2sen(q_1-q_2) - w_1l_2\dot{q_1}\dot{q_2} - w_1l_2\dot{q_1}\dot{q_2}sen(q_1-q_2)
+\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q_1}}\right) = \ddot{q_1}(m_1l_1^2 + m_2w_1^2) + m_2w_1l_2\ddot{q_2}cos(q_1-q_2) - m_2w_1l_2\dot{q_1}\dot{q_2}sen(q_1-q_2) + m_2w_1l_2\dot{q_2}^2sen(q_1-q_2)
 \label{eq:dtdq1.}
 \end{equation}$
 
 $\begin{equation}
-\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q_2}}\right) = m_2l_2^2\ddot{q_2} + w_ql_w\ddot{q_1}cos(q_1-q_2) + w_1l_2\dot{q_1}\dot{q_2}sen(q_1-q_2) - w_ql_2\dot{q_1}^2sen(q_1-q_2)
+\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q_2}}\right) = m_2l_2^2\ddot{q_2} + m_2w_1l_2\ddot{q_1}cos(q_1-q_2) + m_2w_1l_2\dot{q_1}\dot{q_2}sen(q_1-q_2) - m_2w_1l_2\dot{q_1}^2sen(q_1-q_2)
 \label{eq:dtdq2.}
 \end{equation}$
 
@@ -214,6 +214,6 @@ $\begin{equation}
 
 Aplicando as derivadas espaciais e temporais obtidas anteriormente a equação \eqref{eq:sis1} obtém-se um sistema de duas equações, do qual pode-se resolver para as duas acelerações $\ddot{q_1}$ e $\ddot{q_2}$ obtendo-se as equações de movimento do pêndulo duplo.
 
-Devido a ser trabalhoso o desenvolvimento de tal solução, utilizou-se o software mathematica da empresa *Wolfram Research* que permite a solução de equações algébricas. O desenvolvimento pode ser acompanhado AQUI [Colocar depois]
+Devido a ser trabalhoso o desenvolvimento de tal solução, utilizou-se o software MATLAB que permite a solução de equações algébricas. O desenvolvimento pode ser acompanhado AQUI [Colocar depois o codigo no github]
 
 De posse das equações de movimento do sistema, é possível realizar simulações computacionais com este e coletar dados sobre possíveis sistemas de controle. 
