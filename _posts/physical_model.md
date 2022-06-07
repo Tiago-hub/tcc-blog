@@ -1,5 +1,5 @@
 ---
-title: 'Sistema Biarticulado'
+title: 'Sistema Biarticulado - Um modelo matemático utilizando mecânica Lagrangeana baseado no pêndulo duplo'
 excerpt: 'O sistema biarticulado é um sistema com dois graus de liberdade, muito semelhante ao pêndulo duplo. Uma descrição matemática das equações diferencias que regem esse sistema baseada na mecânica de Lagrange é descrita neste post.'
 coverImage: '/assets/blog/dynamic-routing//Untitled%201.png'
 date: '2021-11-16T05:35:07.322Z'
