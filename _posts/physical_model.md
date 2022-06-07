@@ -105,14 +105,14 @@ V = -m_1gl_1cos(q_1) - m_2g\(w_1cos(q_1) + l_2cos(q_2)\)
 \label{eq:V}
 \end{equation}$
 
-A lagrangeana do sistema, dada por $L = T-V$ é obtida subtraindo a equacao \eqref{eq:V} da \eqref{eq:T1}:
+A lagrangeana do sistema, dada por $L = T-V$ é obtida subtraindo a equacao \eqref{eq:T1} da \eqref{eq:V}:
 
 $\begin{equation}
 L = \frac{1}{2}\(m_1l_1\dot{q_1}^2 + m_2\(w_1^2\dot{q_1}^2+l_2^2 \dot{q_2}^2 + 2w_1l_2\dot{q_1}\dot{q_2}cos(q_1-q_2)\)\) + m_1gl_1cos(q_1) + m_2g\(w_1cos(q_1) + l_2cos(q_2)\)
 \label{eq:L}
 \end{equation}$
 
-Nota-se que a lagrangeana do sistema é composta por diversas funções não lineares, o que levará inevitavelmente a uma série de equações diferencias não lineares que descrevem o comportamento do sistema. Em geral o controle de sistema lineares é melhor documentado e mais simples de se implementar, porém em se tratando de análises angulares restringiria muito o problema em pequenas oscilações. Por isso optou-se por prosseguir com o modelo não linear.
+Nota-se que a lagrangeana do sistema é composta por diversas funções não lineares, o que levará inevitavelmente a uma série de equações diferencias não lineares que descrevem o comportamento do sistema. 
 
 Obtendo as derivadas das coordendas gerais:
 
