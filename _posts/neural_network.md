@@ -123,4 +123,4 @@ Figura 4: Rede neo-nebulosa replicando uma curva de entumescimento- Fonte: Autor
 # Referencias
 - [1]: <https://www.koreascience.or.kr/article/CFKO199311920545505.pdf> Yamakawa et all. **A New Effective Learning Algorithm for a Neo Fuzzy Neuron Model**
 - [2]: <https://www.researchgate.net/publication/259162389_A_fast_learning_algorithm_for_evolving_neo-fuzzy_neuron> Silva et all. **A fast learning algorithm for evolving neo-fuzzy neuron**
-- [3]: Ferreira, Leticia Batista Clarindo. **Título bacana do trabalho do meu amor**
+- [3]: Ferreira, Leticia Batista Clarindo. **DESENVOLVIMENTO DE HIDROGÉIS DE QUITOSANA MODIFICADA COM O ÁCIDO 3-(2-FURIL)-ACRÍLICO PARA ENCAPSULAÇÃO DO CITRAL E POSTERIOR APLICAÇÃO NO CONTROLE DE FUNGOS DERMATÓFITOS**
