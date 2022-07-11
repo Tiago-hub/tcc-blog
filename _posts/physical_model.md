@@ -56,7 +56,7 @@ $\begin{equation}
 \end{equation}$
 
 $\begin{equation}
-\dot{y_1} = \dot{q_2} l_1 sen(q_1)
+\dot{y_1} = \dot{q_1} l_1 sen(q_1)
 \label{eq:y1.}
 \end{equation}$
 
